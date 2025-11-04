@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agra Beauty Salon</title>
+
+  <style>
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:"Poppins",sans-serif;
+      background:#fff;
+      color:#333;
+      line-height:1.6;
+      scroll-behavior:smooth;
+    }
+
+    /* 🌸 HERO SECTION WITH VIDEO */
+    .hero{
+      position:relative;
+      height:90vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      text-align:center;
+      overflow:hidden;
+    }
+    .hero video{
+      position:absolute;
+      top:50%;
+      left:50%;
+      min-width:100%;
+      min-height:100%;
+      width:auto;
+      height:auto;
+      transform:translate(-50%,-50%);
+      object-fit:cover;
+      filter:brightness(0.7);
+      z-index:0;
+    }
+    .hero-content{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(4px);
+      border-radius:16px;
+      padding:30px 25px;
+      animation:fadeIn 2s ease;
+    }
+    .hero-content h1{
+      font-size:2.5rem;
+      margin:0;
+      color:#fff;
+      letter-spacing:1px;
+    }
+    .hero-content p{
+      font-size:1.2rem;
+      margin-top:10px;
+      color:#ffe7ef;
+    }
+    .btn{
+      display:inline-block;
+      background:#ff4081;
+      color:#fff;
+      padding:12px 22px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      margin-top:20px;
+      transition:all 0.3s ease;
+    }
+    .btn:hover{background:#ff74a4;transform:translateY(-2px);}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+    /* 🌸 NAVBAR */
+    nav{
+      background:#fff;
+      padding:12px 0;
+      text-align:center;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      position:sticky;
+      top:0;
+      z-index:5;
+    }
+    nav a{
+      color:#ff4081;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:600;
+      transition:color 0.3s;
+    }
+    nav a:hover{color:#d81b60;}
+
+    /* 🌸 SECTIONS */
+    section{
+      padding:60px 20px;
+      max-width:1000px;
+      margin:auto;
+    }
+    h2{
+      text-align:center;
+      color:#ff4081;
+      margin-bottom:30px;
+      font-size:1.8rem;
+    }
+
+    /* 🌸 SERVICES GRID */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:25px;
+    }
+    .service{
+      background:#fff6f9;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.06);
+      text-align:center;
+      transition:transform 0.3s;
+    }
+    .service:hover{transform:translateY(-5px);}
+    .service img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-bottom:12px;
+    }
+
+    /* 🌸 CONTACT / BOOKING */
+    #booking,#contact{text-align:center;}
+    #booking p,#contact p{font-size:1rem;margin:10px auto;max-width:700px;}
+
+    /* 🌸 FOOTER */
+    footer{
+      background:#222;
+      color:#eee;
+      text-align:center;
+      padding:25px;
+      font-size:0.9rem;
+    }
+
+    /* 🌸 RESPONSIVE */
+    @media(max-width:768px){
+      .hero-content h1{font-size:1.9rem;}
+      .hero-content p{font-size:1rem;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO WITH BACKGROUND VIDEO -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="salon.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+      <h1>Agra Beauty Salon</h1>
+      <p>Elegance • Glow • Confidence</p>
+      <a href="#booking" class="btn">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#booking">Book Now</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Our Premium Services</h2>
+    <div class="services">
+      <div class="service">
+        <img src="haircut.jpg" alt="Hair Styling">
+        <h3>Hair Styling</h3>
+        <p>Trendy cuts, coloring, and personalized styling.</p>
+      </div>
+      <div class="service">
+        <img src="facial.jpg" alt="Facial & Skin Care">
+        <h3>Facial & Skin Care</h3>
+        <p>Glow facials, organic clean-ups, and advanced skin therapy.</p>
+      </div>
+      <div class="service">
+        <img src="bridal.jpg" alt="Bridal Makeup">
+        <h3>Bridal Makeup</h3>
+        <p>Dream bridal looks tailored for your big day.</p>
+      </div>
+      <div class="service">
+        <img src="spa.jpg" alt="Spa & Massage">
+        <h3>Spa & Massage</h3>
+        <p>Rejuvenate body and mind with aromatic oil therapy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking">
+    <h2>Book Your Session</h2>
+    <p>Open 10 AM – 8 PM • Closed on Tuesdays</p>
+    <a class="btn" href="https://wa.me/8534980769?text=Hi%20Agra%20Beauty%20Salon!%20I%20want%20to%20book%20an%20appointment." target="_blank">Book on WhatsApp</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>123 Mall Road, Agra • 📞 +91 8534980769</p>
+    <p>Follow us on Instagram <a href="https://instagram.com/agrabeautysalon" target="_blank">@agrabeautysalon</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Agra Beauty Salon | Designed by Insha Naaz</p>
+  </footer>
+</body>
+</html>

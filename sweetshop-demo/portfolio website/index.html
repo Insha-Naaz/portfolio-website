@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Webbybuddy • Web Designer</title>
+  <meta name="description" content="I build beautiful, mobile-friendly websites for small businesses. Affordable, fast, and professional.">
+  <link rel="icon" href="data:,">
+  <style>
+    /* --------- BASIC RESET --------- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#fafafa;
+      color:#333;
+      line-height:1.6;
+      scroll-behavior:smooth;
+    }
+
+    /* --------- HEADER --------- */
+    .site-header{
+      background:linear-gradient(90deg,#6a11cb,#2575fc);
+      color:white;
+      padding:60px 20px;
+      text-align:center;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+    .site-header .brand{font-size:2.4rem;font-weight:700;}
+    .site-header .tag{font-size:1.1rem;margin-top:10px;opacity:0.9;}
+
+    /* --------- CONTAINER --------- */
+    .container{max-width:1100px;margin:auto;padding:0 20px;}
+
+    /* --------- HERO SECTION --------- */
+    .hero{
+      text-align:center;
+      margin:60px 0;
+      background:url('https://images.pexels.com/photos/4065146/pexels-photo-4065146.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+      border-radius:20px;
+      color:white;
+      padding:100px 25px;
+      position:relative;
+    }
+    .hero::after{
+      content:'';
+      position:absolute;inset:0;
+      background:rgba(0,0,0,0.4);
+      border-radius:20px;
+    }
+    .hero h2,.hero p,.hero .hero-ctas{position:relative;z-index:2;}
+    .hero h2{font-size:2rem;margin-bottom:10px;}
+    .hero p{font-size:1.1rem;max-width:700px;margin:auto;margin-bottom:20px;}
+    .btn{
+      display:inline-block;
+      padding:12px 24px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      transition:all 0.3s ease;
+      cursor:pointer;
+    }
+    .btn.primary{background:#ff4081;color:#fff;}
+    .btn.outline{border:2px solid #fff;color:#fff;background:transparent;margin-left:10px;}
+    .btn.primary:hover{background:#ff74a4;}
+    .btn.outline:hover{background:#fff;color:#2575fc;}
+
+    /* --------- SERVICES --------- */
+    .cards h3{text-align:center;color:#2575fc;margin-bottom:25px;font-size:1.7rem;}
+    .card-row{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:12px;
+      text-align:center;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      transition:transform 0.3s;
+    }
+    .card:hover{transform:translateY(-5px);}
+    .card h4{color:#2575fc;margin-bottom:8px;}
+
+    /* --------- PROJECTS --------- */
+    #projects{margin-top:80px;}
+    #projects h3{text-align:center;color:#2575fc;margin-bottom:25px;font-size:1.7rem;}
+    .project-list{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:25px;
+    }
+    .project{
+      background:white;
+      border-radius:12px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      overflow:hidden;
+      transition:transform 0.3s;
+    }
+    .project:hover{transform:translateY(-5px);}
+    .project img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+    .project div{padding:20px;}
+    .project strong{color:#2575fc;font-size:1.1rem;}
+    .small-btn{
+      display:inline-block;
+      background:#2575fc;
+      color:#fff;
+      padding:8px 16px;
+      border-radius:6px;
+      text-decoration:none;
+      margin-top:10px;
+      font-size:0.9rem;
+      font-weight:600;
+      transition:background 0.3s;
+    }
+    .small-btn:hover{background:#1a63d7;}
+
+    /* --------- TESTIMONIALS --------- */
+    #testimonials{margin-top:80px;}
+    .testimonial.card p{font-style:italic;color:#555;}
+
+    /* --------- CONTACT --------- */
+    .contact{text-align:center;margin-top:80px;}
+    .contact p{max-width:700px;margin:10px auto 20px;}
+    input,textarea{
+      width:100%;
+      max-width:600px;
+      padding:10px;
+      margin:8px auto;
+      border-radius:6px;
+      border:1px solid #ccc;
+      font-size:1rem;
+      display:block;
+    }
+    .form-row{margin-top:15px;}
+    .btn.whatsapp{
+      background:#25D366;
+      color:#fff;
+      font-weight:600;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:6px;
+      display:inline-block;
+      margin-bottom:15px;
+    }
+    .btn.whatsapp:hover{background:#1ebe5c;}
+
+    /* --------- FOOTER --------- */
+    footer{
+      background:#222;
+      color:#eee;
+      text-align:center;
+      padding:25px;
+      margin-top:80px;
+      font-size:0.9rem;
+    }
+
+    @media(max-width:768px){
+      .hero{padding:80px 15px;}
+      .hero h2{font-size:1.6rem;}
+      .project-list{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">MyWebBuddy</h1>
+      <p class="tag">Websites for Small Businesses • Fast • Affordable</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h2>Get a Professional Website That Brings Customers</h2>
+      <p>Mobile-friendly, stylish websites with WhatsApp, bookings, and online orders — starting at just ₹1,000.</p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="#contact">Book Free Demo</a>
+        <a class="btn outline" href="#projects">See Samples</a>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="cards">
+      <h3>What I Build</h3>
+      <div class="card-row">
+        <article class="card">
+          <h4>Business Websites</h4>
+          <p>Showcase your shop, salon, or business with a professional look.</p>
+        </article>
+        <article class="card">
+          <h4>Online Menu / Store</h4>
+          <p>Simple online ordering and WhatsApp checkout for local sellers.</p>
+        </article>
+        <article class="card">
+          <h4>Booking & Contact</h4>
+          <p>Quick customer booking pages and contact forms that work on phone.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h3>Sample Projects</h3>
+      <div class="project-list">
+
+        <!-- Salon Demo -->
+        <div class="project">
+          <img src="https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Agra Beauty Salon">
+          <div>
+            <strong>Agra Beauty Salon</strong>
+            <p>Homepage • Services • Booking via WhatsApp</p>
+            <a class="small-btn" href="beauty-salon-demo/index.html" target="_blank">View Demo</a>
+          </div>
+        </div>
+
+        <!-- Sweet Shop Demo -->
+        <div class="project">
+          <img src="https://images.pexels.com/photos/1813504/pexels-photo-1813504.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Agra Sweet Shop">
+          <div>
+            <strong>Agra Sweet Shop</strong>
+            <p>Product Gallery • WhatsApp Order • Contact Info</p>
+            <a class="small-btn" href="sweetshop-demo/index.html" target="_blank">View Demo</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="cards">
+      <h3>What Clients Say</h3>
+      <div class="card-row">
+        <div class="testimonial card">
+          <p>"Quick work! My salon bookings increased in just a week." — R. Kumar</p>
+        </div>
+        <div class="testimonial card">
+          <p>"Affordable and looks amazing on phone!" — S. Sharma, Sweet Shop</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h3>Contact Me</h3>
+      <p>Ready to get your business online? Message me on WhatsApp or send a quick request below.</p>
+
+      <p><a class="btn whatsapp" href="https://wa.me/918534980769?text=Hello%20Insha!%20I%20want%20a%20website." target="_blank">Message on WhatsApp</a></p>
+
+      <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input name="name" placeholder="Your name" required>
+        <input name="email" type="email" placeholder="Your email">
+        <textarea name="message" rows="4" placeholder="Tell me about your business..." required></textarea>
+        <div class="form-row">
+          <button class="btn primary" type="submit">Send Request</button>
+          <a class="btn outline" href="upi://pay?pa=yourvpa@bank&pn=Insha%20Naaz&am=&cu=INR">Pay via UPI</a>
+        </div>
+      </form>
+
+      <p class="small" style="margin-top:15px;">Email: <a href="mailto:insha676767@gmail.com">insha676767@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Insha Naaz • Firozabad • <a href="https://instagram.com/yourhandle" style="color:#ff74a4;text-decoration:none;">@yourhandle</a></p>
+    <p>Made with ❤️ — 30-day free support for clients</p>
+  </footer>
+</body>
+</html>

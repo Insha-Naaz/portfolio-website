@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agra Sweet Shop</title>
+
+  <style>
+    /* === BASIC PAGE SETTINGS === */
+    body{margin:0;font-family:system-ui,Roboto,Arial;background:#fffef9;color:#333}
+
+    /* === HEADER VIDEO === */
+    .hero-header{
+      position:relative;
+      overflow:hidden;
+      color:white;
+      text-align:center;
+      padding:60px 20px;
+      background:linear-gradient(90deg,#ffba00,#ff8c00); /* fallback color */
+    }
+    .bg-video{
+      position:absolute;
+      top:50%;left:50%;
+      min-width:100%;min-height:100%;
+      transform:translate(-50%,-50%);
+      object-fit:cover;
+      z-index:0;
+      filter:brightness(0.8);
+    }
+    .overlay{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:rgba(255,140,0,0.4);
+    }
+    .header-content{position:relative;z-index:2;}
+    .header-content h1{margin:0;font-size:2rem;}
+    .header-content p{margin-top:8px;font-size:1.1rem;opacity:0.9;}
+
+    /* === NAVIGATION === */
+    nav{background:#fff3d4;text-align:center;padding:10px}
+    nav a{margin:0 12px;text-decoration:none;color:#ff8c00;font-weight:600}
+
+    /* === SECTIONS === */
+    section{padding:40px 20px;max-width:900px;margin:auto}
+
+    /* === GALLERY === */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:25px}
+    .gallery img{width:100%;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.06);transition:transform .2s}
+    .gallery img:hover{transform:scale(1.05)}
+
+    /* === BUTTON === */
+    .btn{display:inline-block;background:#ff8c00;color:white;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:15px}
+
+    /* === FOOTER === */
+    footer{text-align:center;background:#222;color:#ddd;padding:25px;margin-top:30px}
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= HEADER WITH VIDEO ======= -->
+  <header class="hero-header">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="header.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="header-content">
+      <h1>Agra Sweet Shop</h1>
+      <p>Traditional Taste • Modern Flavors</p>
+    </div>
+  </header>
+
+  <!-- ======= NAVIGATION ======= -->
+  <nav>
+    <a href="#gallery">Gallery</a>
+    <a href="#order">Order Now</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ======= ABOUT ======= -->
+  <section id="about" style="text-align:center">
+    <p>Since 1998, Agra Sweet Shop has served delicious mithai and snacks made fresh every day.</p>
+  </section>
+
+  <!-- ======= GALLERY ======= -->
+  <section id="gallery">
+    <h2 style="text-align:center;color:#ff8c00;">Our Specials</h2>
+    <div class="gallery">
+      <img src="peda.jpg" alt="Peda">
+      <img src="rasgulla.jpg" alt="Rasgulla">
+      <img src="laddoo.jpg" alt="Laddoo">
+      <img src="jalebi.jpg" alt="Jalebi">
+    </div>
+  </section>
+
+  <!-- ======= ORDER ======= -->
+  <section id="order" style="text-align:center">
+    <h2 style="color:#ff8c00;">Order Now on WhatsApp</h2>
+    <p>We deliver across Agra city daily 10 AM – 8 PM</p>
+    <a class="btn" href="https://wa.me/919876543210?text=Hi%20Agra%20Sweet%20Shop!%20I%20want%20to%20order%20sweets." target="_blank">Order on WhatsApp</a>
+  </section>
+
+  <!-- ======= CONTACT ======= -->
+  <section id="contact" style="text-align:center">
+    <h2 style="color:#ff8c00;">Contact Us</h2>
+    <p>45 Sadar Bazaar, Agra • 📞 +91 98765 43210</p>
+    <p>Instagram <a href="https://instagram.com/agrasweetshop" target="_blank">@agrasweetshop</a></p>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <p>© 2025 Agra Sweet Shop | Designed by Insha Naaz</p>
+  </footer>
+
+</body>
+</html>
